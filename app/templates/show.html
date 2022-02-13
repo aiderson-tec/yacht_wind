@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表示画面</title>
+</head>
+
+<body>
+
+  <div class="main">
+    <h5 class="title">表示画面</h5>
+    <a href="index.html">入力ページ</a>
+
+    <form action="/show" method="POST">
+      年<input type="date" name="date" >
+      場所<select name="place" size="1">
+        <option value="逗子(逗子マリーナ寄り)">逗子(逗子マリーナ寄り)</option>
+        <option value="逗子(葉山マリーナ寄り)">逗子(葉山マリーナ寄り)</option>
+        <option value="葉山(森戸海岸寄り)">葉山(森戸海岸寄り)</option>
+        <option value="相模(葉山沖)">相模(葉山沖)</option>
+        <option value="江ノ島">江ノ島</option>
+        <option value="八景">八景</option>
+      </select>
+      <input type="submit" value="submit">
+    </form>
+
+    <table>
+      <tr>
+        <th>時間</th>
+        <th>風向</th>
+        <th>風速</th>
+        <th>波高</th>
+        <th>天気</th>
+        <th>練習</th>
+        <th>その他</th>
+      </tr>
+      {% for x in rows %}
+      <tr>
+        <td>{{x[0]}}時{{x[1]}}分</td>
+        <td>{{x[3]}}度</td>
+        <td>{{x[4]}}m</td>
+        <td>{{x[5]}}m</td>
+        <td>{{x[6]}}</td>
+        <td>{{x[7]}}</td>
+        <td>{{x[8]}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <script src="../static/main.js"></script>
+</body>
+
+</html>

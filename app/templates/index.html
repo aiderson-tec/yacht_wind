@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>入力ページ</title>
+</head>
+
+<body>
+  <div class="main">
+
+    {% for word in rows %}
+    <p>{{word}}</p>
+    {% endfor %}
+
+    <div class="title">
+      <h5>青学ヨット部風データ記録サイト</h5>
+      <h5>{{speed}}</h5>
+    </div>
+    <a href="show.html">出力ページ</a>
+    <a href="test.html">管理者ページ</a>
+    <form action="/input" method="POST">
+      場所<select name="place" size="1">
+        <option value="逗子(逗子マリーナ寄り)">逗子(逗子マリーナ寄り)</option>
+        <option value="逗子(葉山マリーナ寄り)">逗子(葉山マリーナ寄り)</option>
+        <option value="葉山(森戸海岸寄り)">葉山(森戸海岸寄り)</option>
+        <option value="相模(葉山沖)">相模(葉山沖)</option>
+        <option value="江ノ島">江ノ島</option>
+        <option value="八景">八景</option>
+      </select>
+      風向<select name="direction" size="1">
+        <option value="0">0</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+        <option value="60">60</option>
+        <option value="70">70</option>
+        <option value="80">80</option>
+        <option value="90">90</option>
+        <option value="100">100</option>
+        <option value="110">110</option>
+        <option value="120">120</option>
+        <option value="130">130</option>
+        <option value="140">140</option>
+        <option value="150">150</option>
+        <option value="160">160</option>
+        <option value="170">170</option>
+        <option value="180">180</option>
+        <option value="190">190</option>
+        <option value="200">200</option>
+        <option value="210">210</option>
+        <option value="220">220</option>
+        <option value="230">230</option>
+        <option value="240">240</option>
+        <option value="250">250</option>
+        <option value="260">260</option>
+        <option value="270">270</option>
+        <option value="280">280</option>
+        <option value="290">290</option>
+        <option value="300">300</option>
+        <option value="310">310</option>
+        <option value="320">320</option>
+        <option value="330">330</option>
+        <option value="340">340</option>
+        <option value="350">350</option>
+        <option value="360">360</option>
+      </select>度
+      風速<select name="speed" size="1">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+      </select>m
+      波高<select name="wave" size="1">
+        <option value="0">0</option>
+        <option value="0.5">0.5</option>
+        <option value="1.0">1.0</option>
+        <option value="1.5">1.5</option>
+        <option value="2.0">2.0</option>
+        <option value="2.5">2.5</option>
+        <option value="3.0">3.0</option>
+      </select>m
+      天気<select name="weather" size="1">
+        <option value="快晴">快晴</option>
+        <option value="晴れ">晴れ</option>
+        <option value="曇り">曇り</option>
+        <option value="雨">雨</option>
+      </select>
+      練習メニュー<input type="text" name="practice">
+      その他<input type="text" name="others">
+      <input type="submit" value="submit">
+    </form>
+    <div id="image">
+      <img src="../static/images/area.png">
+    </div>
+  </div>
+
+  <script src="../static/main.js"></script>
+</body>
+
+</html>
