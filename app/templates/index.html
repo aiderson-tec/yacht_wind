@@ -12,11 +12,22 @@
 <body>
   <div class="main">
 
-    <div class="title">
-      <h5>青学ヨット部風データ記録サイト</h5>
-    </div>
-    <a href="show.html">出力ページ</a>
-    <a href="test.html">管理者ページ</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <span class="navbar-brand mb-0 h1">体育会ヨット部</span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="index.html">入力ページ</a>
+          <a class="nav-item nav-link" href="show.html">出力ページ</a>
+          <a class="nav-item nav-link" href="test.html">テスト用入力ページ</a>
+          <a class="nav-item nav-link" href="testshow.html">テスト用出力ページ</a>
+        </div>
+      </div>
+    </nav>
+    
     <form action="/input" method="POST">
       場所<select name="place" size="1">
         <option value="逗子(逗子マリーナ寄り)">逗子(逗子マリーナ寄り)</option>
